@@ -1,0 +1,17 @@
+- contacts:
+
+   - john doe: 
+      name: John Doe
+      gpg_pubkey: 8F6D8AF0
+      primary_email: john.doe@example.com
+      failsafe_email: 
+      primary_phone: +1/123.456.7890
+      failsafe_phone: 
+
+  - jane doe: 
+      name: Jane Doe
+      gpg_pubkey: 8F6D8AF0
+      primary_email:  john.doe@example.com
+      failsafe_email: 
+      primary_phone: +1/098.765.4321
+      failsafe_phone: 

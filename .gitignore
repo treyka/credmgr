@@ -1,4 +1,20 @@
+# 
+# trey stuff
+# 
+*.[oa]
+*~
+.*.swp
+.#*
+\#*\#
+.git/
+*.elc
+*.bak
 *.py[co]
+private_config/
+
+#
+# default github python stuff
+#
 
 # Packages
 *.egg
