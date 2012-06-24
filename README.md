@@ -45,6 +45,8 @@ the bad
 the ugly
 --------
 - there may be (read: surely are) nasty problems with my implementation (remember, __this is 0.1 code__, my friend!)
+  - note that this is some _ugly_ code; it couldn't be farther from PEP8 and lacks unit tests, docstrings, and so forth
+  - this is a minimally-viable implementation intended to validate the concepts; refinements to follow
 - there may be undisclosed vulnerabilities in the underlying dependencies (external binaries and python modules)
 - __use at your own risk!__
 
