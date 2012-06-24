@@ -1,0 +1,12 @@
+- cred:
+    # hash_types should support all of the passlib crypt methods listed here:
+    # http://packages.python.org/passlib/lib/passlib.hash.html
+    # just use the same name that passlib uses and it should work
+    hash_types: [md5_crypt, bcrypt, sha1_crypt, sun_md5_crypt, sha256_crypt, sha512_crypt,]
+    name: example root password
+    comment: example comment
+    minimum_reassembly_shards: 2
+    password_length: 64
+    affiliation: Example Company
+    smtp_from: do-not-reply-credmgr@example.com
+    shard_holders: [john doe, jane doe, bobby tables]
