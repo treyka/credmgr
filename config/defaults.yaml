@@ -3,8 +3,6 @@
     # http://packages.python.org/passlib/lib/passlib.hash.html
     # just use the same name that passlib uses and it should work
     hash_types: [md5_crypt, bcrypt, sha1_crypt, sun_md5_crypt, sha256_crypt, sha512_crypt, ]
-    credential_name: example root password
-    credential_comment: example comment
     minimum_reassembly_shards: 3
     password_length: 64
     affiliation: Example Company

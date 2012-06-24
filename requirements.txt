@@ -1,0 +1,12 @@
+PyYAML==3.10
+SQLAlchemy==0.7.8
+argparse==1.2.1
+distribute==0.6.24
+pam==0.1.4
+passlib==1.6
+pwgen==0.3
+py-bcrypt==0.2
+python-gnupg==0.3.0
+regex==0.1.20120613
+wsgiref==0.1.2
+yolk==0.4.3
