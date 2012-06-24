@@ -18,42 +18,52 @@ how does credmgr work?
 
 what kind of systems can credmgr create hashes for?
 ---------------------------------------------------
-- short answer: a ton. look at the [passlib](http://packages.python.org/passlib/lib/passlib.hash.html) documentation for a full list
+- short answer: a ton. look at the [passlib](http://packages.python.org/passlib/lib/passlib.hash.html) docs for a full listing
 - [BCrypt](http://en.wikipedia.org/wiki/Bcrypt), [PBKDF2](http://en.wikipedia.org/wiki/PBKDF2), and [SHA-512](http://en.wikipedia.org/wiki/SHA-2) are probably the most interesting
-- also supported are various windows, dbms, and other application-specific and/or archaic formats
+  - also supported are various windows, dbms, and other application-specific and/or archaic formats
 
 recommended deployment strategy
 -------------------------------
-- validate this in a test enviroment before you reset your root passwords in production!!!
+- _validate this in a test enviroment_ before you reset your root passwords in production!!!
 - you'll need to have a good [sudoers](http://en.wikipedia.org/wiki/Sudo) (or [equivalent](http://en.wikipedia.org/wiki/Comparison_of_privilege_authorization_features)) setup in place so your system / network admins can continue to do their jobs
 - deploy the password hashes, preferably via a configuration management system, such as [puppet](http://puppetlabs.com/), [chef](http://www.opscode.com/chef/), [microsoft sccm](https://www.microsoft.com/en-us/server-cloud/system-center/configuration-manager-2012.aspx), [etc](https://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software)
-- establish and communicate a clear policy for under what circumstances the root password(s) can be recovered, workflows, management approval process, etc to put some accountability around this
+- _establish and communicate a clear policy_ for under what circumstances the root password(s) can be recovered, workflows, management approval process, etc to put some accountability around this
 - if you're using a log management tool that supports alerts or script execution based on log events, consider setting up a system that watches for successful root logins and then generates a ticket to regenerate and reset the root password on that system.
 
 
 the good
 --------
-- it works if you set it up properly
+- it works _if_ you set it up properly
 
 the bad
 -------
-- it still needs a lot of improvement
+- it still needs _lots_ of improvements
 
 the ugly
 --------
-- there may be unknown security problems in my implementation or the underlying libraries - use at your own risk!
+- there may be unknown security problems in my implementation or the underlying libraries - _use at your own risk!_
 
 how to get credmgr up and running
 ---------------------------------
-- for the moment, credmgr will only run on a *nix system (or [cygwin](http://www.cygwin.com/)) because it makes a couple of bash subshell calls.
-- this has only been tested on python 2.7. it may work under 2.6. it probably won't run under 3.x.
-- you'll need to have [gnupg](http://www.gnupg.org/) up-and-running
-- you'll need to have all the public keys for your shard-holders imported
-- you'll also need to have [ssss](http://point-at-infinity.org/ssss/) installed
-- if you're running linux, there should be packages for both gnupg and ssss available in your native package manager
-- if not, you'll have to build / package from source
-- 
-- checkout the credmgr
+- platform dependencies
+  - for the moment, credmgr will only run on a *nix system (or [cygwin](http://www.cygwin.com/)) because it makes a couple of bash subshell calls.
+
+- python version dependencies
+  - this has only been tested on python 2.7. it may work under 2.6. it probably won't run under 3.x.
+
+- external binary dependencies
+  - you'll need to have [gnupg](http://www.gnupg.org/) up-and-running
+  - you'll also need to have [ssss](http://point-at-infinity.org/ssss/) installed
+    - if you're running linux, there should be packages for both gnupg and ssss available in your native package manager
+    - if not, you'll have to build / package from source
+
+- python module dependencies
+  - 
+
+- initial configuration
+  - you'll need to have all the public keys for your shard-holders imported
+  - 
+  - checkout the credmgr
 
 
 todo
