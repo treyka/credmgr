@@ -75,17 +75,22 @@ how to get credmgr up and running
   - you'll need to have all the public keys for your shard-holders imported to your gpg keyring
     - consider creating a separate credmgr user and putting a dedicated, standalone gpg setup in its home directory so as not to create dependencies on your own gpg keyring
   - checkout credmgr from github (i'm assuming you know how to do __that__)
-  - cd credmgr and you should have a filestructure like this:
-`.
-├── config
-│   ├── contacts.yaml
-│   ├── defaults.yaml
-│   ├── example_cred.yaml
-│   └── gpg_keys
-├── credmgr.py
-├── README.md
-└── requirements.txt`
-- foo
+  - cd credmgr/
+  - cp example_config/* config/
+    - hint: you can have _multiple_ config dirs
+  - put all your shard-holders' info into config/contacts.yaml 
+  - put all your site-wide defaults into config/defaults.yaml
+  - use config/example_cred.yaml as a template for your credential-specific config
+    - settings in defaults.yaml and your credential-specific yaml are merged at runtime
+    - in case of conflict, settings in your credential-specific yaml take precedence over defaults.yaml
+    - you have to specifically list shard-holders (using the shard_holders array) in your defaults.yaml and/or your credential-specific yaml
+      - ie, it doesn't automatically include _everyone_listed in contacts.yaml and you can specify different sets of shard-holders for different credentials
+  - try it out!
+    - credmgr.py --configdir <path to config dir> --cred-yaml <path to credential-specific yaml> 
+    - if everything's setup correctly:
+      - you should see password hashes (in all your requested formats) on stdout
+      - you'll wait (up to a couple of minutes) for the shamir key-sharding operation, depending on your hardware and the availability of system entropy
+      - the configured shard-holders should receive individual emails, encrypted to their public-keys, providing their shard material, some explanation about what it's for, instructions for how to reassemble the cleartext, and a contact list for all the other shard-holders.
 
 
 todo
@@ -96,3 +101,9 @@ todo
 - put a sqlite backend behind it to support more complex trust management scenarios, like 
   - show me all the active sets of credentials in my environment
   - regenerate all the credentials using $deprecated_hashing_scheme
+  - operations around hiring / firing (or promote / demote trust, depending on your use case)
+- use gpg + web of trust in a more nuanced way
+- find ways to better protect the cleartext while it's held in memory
+  - warn the user if the system is swapping to an unencrypted swap partition?
+- write a puppet class for better integration
+- i've got lots of other ideas but...i only have so much free time :-/
