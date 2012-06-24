@@ -67,14 +67,25 @@ how to get credmgr up and running
     - if not, you'll have to build / package from source
 
 - python module dependencies
-  - these are listed in requirements.txt 
+  - these are listed in [requirements.txt](http://github.com/treyka/credmgr/blob/master/requirements.txt) 
   - install these from [pip](http://www.pip-installer.org/en/latest/index.html) or from your native package manager
     - what?! you don't know about pip? okay, let me point you at [the salty crane's excellent writeup](http://www.saltycrane.com/blog/2009/05/notes-using-pip-and-virtualenv-django/)
 
 - initial configuration
-  - you'll need to have all the public keys for your shard-holders imported
-  - 
-  - checkout the credmgr
+  - you'll need to have all the public keys for your shard-holders imported to your gpg keyring
+    - consider creating a separate credmgr user and putting a dedicated, standalone gpg setup in its home directory so as not to create dependencies on your own gpg keyring
+  - checkout credmgr from github (i'm assuming you know how to do __that__)
+  - cd credmgr and you should have a filestructure like this:
+  .
+  ├── config
+  │   ├── contacts.yaml
+  │   ├── defaults.yaml
+  │   ├── example_cred.yaml
+  │   └── gpg_keys
+  ├── credmgr.py
+  ├── README.md
+  └── requirements.txt
+
 
 
 todo
