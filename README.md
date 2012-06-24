@@ -76,7 +76,7 @@ how to get credmgr up and running
     - consider creating a separate credmgr user and putting a dedicated, standalone gpg setup in its home directory so as not to create dependencies on your own gpg keyring
   - checkout credmgr from github (i'm assuming you know how to do __that__)
   - cd credmgr and you should have a filestructure like this:
-    .
+`    .
     ├── config
     │   ├── contacts.yaml
     │   ├── defaults.yaml
@@ -84,7 +84,7 @@ how to get credmgr up and running
     │   └── gpg_keys
     ├── credmgr.py
     ├── README.md
-    └── requirements.txt
+    └── requirements.txt`
 - foo
 
 
