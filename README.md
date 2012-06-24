@@ -84,9 +84,9 @@ how to get credmgr up and running
     - settings in defaults.yaml and your credential-specific yaml are merged at runtime
     - in case of conflict, settings in your credential-specific yaml take precedence over defaults.yaml
     - you have to specifically list shard-holders (using the shard_holders array) in your defaults.yaml and/or your credential-specific yaml
-      - ie, it doesn't automatically include _everyone_listed in contacts.yaml and you can specify different sets of shard-holders for different credentials
+      - ie, it doesn't automatically include _everyone_ listed in contacts.yaml and you can specify different sets of shard-holders for different credentials
   - try it out!
-    - credmgr.py --configdir <path to config dir> --cred-yaml <path to credential-specific yaml> 
+    - credmgr.py --configdir path_to_config_dir --cred-yaml path_to_credential-specific_yaml 
     - if everything's setup correctly:
       - you should see password hashes (in all your requested formats) on stdout
       - you'll wait (up to a couple of minutes) for the shamir key-sharding operation, depending on your hardware and the availability of system entropy
