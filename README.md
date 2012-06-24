@@ -102,7 +102,9 @@ todo
   - show me all the active sets of credentials in my environment
   - regenerate all the credentials using $deprecated_hashing_scheme
   - operations around hiring / firing (or promote / demote trust, depending on your use case)
-- use gpg + web of trust in a more nuanced way
+- add cli flags to remove dependencies on yaml config
+  - lets the thing be further automated
+- use gpg + web of trust in a more nuanced, less slap-happy way
 - find ways to better protect the cleartext while it's held in memory
   - warn the user if the system is swapping to an unencrypted swap partition?
 - write a puppet class for better integration
