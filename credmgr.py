@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 
+# Copyright (C) 2012 Trey Darley
+# 
+# Trey Darley can be contacted at: trey@kingfisherops.com
+# 
+# Licensed under the Apache License, Version 2.0
+#
+# Please refer to the included LICENSE file for further details.
+#
+
 import yaml
 from time import sleep
 from subprocess import Popen, PIPE

@@ -107,3 +107,9 @@ todo
   - warn the user if the system is swapping to an unencrypted swap partition?
 - write a puppet class for better integration
 - i've got lots of other ideas but...i only have so much free time :-/
+
+License
+-------
+Apache License, Version 2.0
+
+Please refer to the [LICENSE](http://github.com/treyka/credmgr/blob/master/LICENSE) file for further details.
