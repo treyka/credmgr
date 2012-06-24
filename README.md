@@ -106,6 +106,7 @@ todo
 - find ways to better protect the cleartext while it's held in memory
   - warn the user if the system is swapping to an unencrypted swap partition?
 - write a puppet class for better integration
+- provide an abstraction (perhaps a hash of a hash?) for nodes to indicate (via puppet reports) which root password they have set so as to provide a root password auditing capability
 - i've got lots of other ideas but...i only have so much free time :-/
 
 License
