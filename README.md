@@ -24,24 +24,29 @@ what kind of systems can credmgr create hashes for?
 
 recommended deployment strategy
 -------------------------------
-- _validate this in a test enviroment_ before you reset your root passwords in production!!!
+- _validate this in a test enviroment__ before you reset your root passwords in production!!!
 - you'll need to have a good [sudoers](http://en.wikipedia.org/wiki/Sudo) (or [equivalent](http://en.wikipedia.org/wiki/Comparison_of_privilege_authorization_features)) setup in place so your system / network admins can continue to do their jobs
 - deploy the password hashes, preferably via a configuration management system, such as [puppet](http://puppetlabs.com/), [chef](http://www.opscode.com/chef/), [microsoft sccm](https://www.microsoft.com/en-us/server-cloud/system-center/configuration-manager-2012.aspx), [etc](https://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software)
-- _establish and communicate a clear policy_ for under what circumstances the root password(s) can be recovered, workflows, management approval process, etc to put some accountability around this
+- __establish and communicate a clear policy__ for under what circumstances the root password(s) can be recovered, workflows, management approval process, etc to put some accountability around this
 - if you're using a log management tool that supports alerts or script execution based on log events, consider setting up a system that watches for successful root logins and then generates a ticket to regenerate and reset the root password on that system.
 
 
 the good
 --------
-- it works _if_ you set it up properly
+- it works __if__ you set it up properly
+- it's an elegant, versatile, and __free__ solution to an otherwise tricky problem
 
 the bad
 -------
-- it still needs _lots_ of improvements
+- it still needs __lots__ of improvements
+- for the moment it might be a little tricky to setup unless you're moderately comfortable with linux, python, and gpg. 
+  - if you've managed to read this far, you're probably up to it
 
 the ugly
 --------
-- there may be unknown security problems in my implementation or the underlying libraries - _use at your own risk!_
+- there may be (read: surely are) nasty problems with my implementation (remember, __this is 0.1 code__, my friend!)
+- there may be undisclosed vulnerabilities in the dependencies (external binaries and python modules)
+- __use at your own risk!__
 
 how to get credmgr up and running
 ---------------------------------
