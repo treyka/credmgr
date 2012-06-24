@@ -51,19 +51,26 @@ the ugly
 how to get credmgr up and running
 ---------------------------------
 - platform dependencies
-  - for the moment, credmgr will only run on a *nix system (or [cygwin](http://www.cygwin.com/)) because it makes a couple of bash subshell calls.
+  - for the moment, credmgr will only run on a native posix system (or [cygwin](http://www.cygwin.com/)) because it makes a couple of fuggly bash subshell calls.
+  - it has only been tested on debian
+  - the crypto operations depend on lots of system entropy - if you're planning to run in a virtualized environment consider installing [rng-tools](https://www.gnu.org/software/hurd/user/tlecarrour/rng-tools.html) or you may spend a lot of time waiting
 
 - python version dependencies
-  - this has only been tested on python 2.7. it may work under 2.6. it probably won't run under 3.x.
+  - this has only been tested on python 2.7. 
+    - it may work under 2.6. 
+    - it probably _won't_ run under 3.x.
 
 - external binary dependencies
   - you'll need to have [gnupg](http://www.gnupg.org/) up-and-running
   - you'll also need to have [ssss](http://point-at-infinity.org/ssss/) installed
-    - if you're running linux, there should be packages for both gnupg and ssss available in your native package manager
+  - if you're running linux, there should be packages for both gnupg and ssss available in your native package manager
     - if not, you'll have to build / package from source
 
 - python module dependencies
-  - 
+  - these are listed in requirements.txt 
+  - install these from [pip](http://www.pip-installer.org/en/latest/index.html) or from your native package manager
+    - what?! you don't know about pip? okay, let me point you at [the salty crane's excellent writeup](http://www.saltycrane.com/blog/2009/05/notes-using-pip-and-virtualenv-django/)
+
 
 - initial configuration
   - you'll need to have all the public keys for your shard-holders imported
