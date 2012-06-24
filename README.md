@@ -24,7 +24,7 @@ what kind of systems can credmgr create hashes for?
 
 recommended deployment strategy
 -------------------------------
-- _validate this in a test enviroment__ before you reset your root passwords in production!!!
+- __validate this in a test enviroment__ before you reset your root passwords in production!!!
 - you'll need to have a good [sudoers](http://en.wikipedia.org/wiki/Sudo) (or [equivalent](http://en.wikipedia.org/wiki/Comparison_of_privilege_authorization_features)) setup in place so your system / network admins can continue to do their jobs
 - deploy the password hashes, preferably via a configuration management system, such as [puppet](http://puppetlabs.com/), [chef](http://www.opscode.com/chef/), [microsoft sccm](https://www.microsoft.com/en-us/server-cloud/system-center/configuration-manager-2012.aspx), [etc](https://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software)
 - __establish and communicate a clear policy__ for under what circumstances the root password(s) can be recovered, workflows, management approval process, etc to put some accountability around this
@@ -45,15 +45,15 @@ the bad
 the ugly
 --------
 - there may be (read: surely are) nasty problems with my implementation (remember, __this is 0.1 code__, my friend!)
-- there may be undisclosed vulnerabilities in the dependencies (external binaries and python modules)
+- there may be undisclosed vulnerabilities in the underlying dependencies (external binaries and python modules)
 - __use at your own risk!__
 
 how to get credmgr up and running
 ---------------------------------
 - platform dependencies
-  - for the moment, credmgr will only run on a native posix system (or [cygwin](http://www.cygwin.com/)) because it makes a couple of fuggly bash subshell calls.
+  - for the moment, credmgr will only run on a native posix system (or [cygwin](http://www.cygwin.com/)) because it makes a couple of fuggly-ass subshell calls.
   - it has only been tested on debian
-  - the crypto operations depend on lots of system entropy - if you're planning to run in a virtualized environment consider installing [rng-tools](https://www.gnu.org/software/hurd/user/tlecarrour/rng-tools.html) or you may spend a lot of time waiting
+  - the crypto operations depend on __lots of system entropy__ - if you're planning to run in a virtualized environment consider installing [rng-tools](https://www.gnu.org/software/hurd/user/tlecarrour/rng-tools.html) or you may spend a lot of time waiting
 
 - python version dependencies
   - this has only been tested on python 2.7. 
@@ -70,7 +70,6 @@ how to get credmgr up and running
   - these are listed in requirements.txt 
   - install these from [pip](http://www.pip-installer.org/en/latest/index.html) or from your native package manager
     - what?! you don't know about pip? okay, let me point you at [the salty crane's excellent writeup](http://www.saltycrane.com/blog/2009/05/notes-using-pip-and-virtualenv-django/)
-
 
 - initial configuration
   - you'll need to have all the public keys for your shard-holders imported
