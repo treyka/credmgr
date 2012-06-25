@@ -72,6 +72,7 @@ how to get credmgr up and running
   - these are listed in [requirements.txt](http://github.com/treyka/credmgr/blob/master/requirements.txt) 
   - install these from [pip](http://www.pip-installer.org/en/latest/index.html) or from your native package manager
     - what?! you don't know about pip? okay, let me point you at [the salty crane's excellent writeup](http://www.saltycrane.com/blog/2009/05/notes-using-pip-and-virtualenv-django/)
+  - __note:__ i haven't tested __all__ of the passlib hashing algorithms; some of these have their own external dependencies
 
 - initial configuration
   - you'll need to have all the public keys for your shard-holders imported to your gpg keyring
@@ -107,10 +108,18 @@ todo
 - add cli flags to remove dependencies on yaml config
   - lets the thing be further automated
 - use gpg + web of trust in a more nuanced, less slap-happy way
+  - use gpg keyring for whatever you can and move whatever can be shifted from contacts.yaml to it
+  - enable (optional) use of master shards for credential management (keyring passphrase, signing of shard mails, encryption of sqlite db)
 - find ways to better protect the cleartext while it's held in memory
   - warn the user if the system is swapping to an unencrypted swap partition?
 - write a puppet class for better integration
 - provide an abstraction (perhaps a hash of a hash?) for nodes to indicate (via puppet reports) which root password they have set so as to provide a root password auditing capability
+- clean up code
+  - write unit tests
+  - add docstrings
+- create a receipt-confirmation system for shard-holders (something like mailman subscription system) so you can ensure there were no delivery problems prior to changing production password hashes
+- create a sort of state machine, trap kill signals, and try to ensure that there is no execution path that lands you in an indeterminate state
+- document (and add to requirements.txt) external dependencies for all the passlig hashing algorithms 
 - i've got lots of other ideas but...i only have so much free time :-/
 
 License
