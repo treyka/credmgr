@@ -1,4 +1,4 @@
-PyYAML==3.10
+PyYAML==5.4
 SQLAlchemy==0.7.8
 argparse==1.2.1
 distribute==0.6.24
