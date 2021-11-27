@@ -5,7 +5,7 @@ distribute==0.6.24
 pam==0.1.4
 passlib==1.6
 pwgen==0.3
-py-bcrypt==0.2
+py-bcrypt==0.3
 python-gnupg>=0.3.7
 regex==0.1.20120613
 wsgiref==0.1.2
